@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import cv2
 import os 
 import eel
-#import light
 
 eel.init('Web')
 
@@ -68,5 +67,3 @@ def getEmotion():
     return str(top_emotion)
 
 eel.start('main.html', size=(800, 600))
-
-#cd "C:\Users\Sreekar\OneDrive\Documents\Emotion[1]\Emotion"
