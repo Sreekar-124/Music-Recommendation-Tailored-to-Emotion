@@ -34,5 +34,5 @@ projectFolder/
 │   ├── background.css
 │   ├── header.css
 │   ├── player.css
-│   ├── script.js
+│   ├── code.js
 ├── emotion_detection.py
