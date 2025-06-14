@@ -117,9 +117,6 @@ for (var i = 0; i < icon.length; i++) {
   console.log(songs[i][2]);
   var ins = document.createElement("div");
   ins.id = "b" + i;
-  //ins.onclick=function(){
-  //next(this);
-  //};
   ins.setAttribute("class", "song");
   document.body.appendChild(ins);
   document.getElementById("b" + i).innerHTML =
@@ -144,12 +141,10 @@ for (var i = 0; i < icon.length; i++) {
 
 function setmod(elem) {
   mod = elem.value;
-
-  // Always trigger the respective mode function
   if (mod == 2) {
-    getTime(); // Emotion-based
+    getTime();
   } else if (mod == 3) {
-    rand_play(); // Random
+    rand_play(); 
   }
 }
 
@@ -190,8 +185,6 @@ function addq(elem) {
   l.id = "e" + eqc;
   l.name = x;
   l.innerHTML = sname[x] + "<br>";
-  //var text=document.createTextNode(sname[x]+"<br>");
-  //l.appendChild(text);
   document.getElementById("queue").appendChild(l);
   eqc = eqc + 1;
 }
@@ -238,8 +231,8 @@ function next_in_Q() {
 }
 
 function rand_play() {
-  songrun = false; // <- added this line
-  var index = Math.floor(Math.random() * path.length); // updated line
+  songrun = false; 
+  var index = Math.floor(Math.random() * path.length); 
   var pa = songs[index][0];
   document.getElementById("sname").innerHTML = sname[index];
   document.getElementById("sel").src = pa;
@@ -263,15 +256,6 @@ function moody(val) {
   songrun = true;
 }
 
-/*async function getTime() {
-  let value = await eel.getEmotion()();
-  console.log("Emotion received from Python:", value); // Debug log
-  if (value == "angry") moody(0);
-  else if (value == "happy") moody(1);
-  else if (value == "sad") moody(2);
-  else moody(3); // fallback to neutral or unknown emotion
-}*/
-
 function getTime() {
   eel.getEmotion()(function (emotion) {
     console.log("Detected emotion: " + emotion);
@@ -286,19 +270,6 @@ function getTime() {
       alert("Face not detected. Please try again.");
       return;
     }
-
-    // const index =
-    //   mood[moodIndex][Math.floor(Math.random() * mood[moodIndex].length)] - 1;
-    // console.log("Mood index: " + index);
-
-    // document.getElementById("sname").innerHTML = sname[index];
-    // document.getElementById("sel").src = path[index];
-    // document.getElementById("main_slider").load();
-    // document.getElementById("main_slider").play();
-    // document.getElementById("emoji").style.backgroundImage =
-    //   "url('" + songs[index][3] + "')";
-
-    // songrun = true;
   });
 }
 
