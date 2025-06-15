@@ -1,9 +1,9 @@
 Music-Recommendation-Tailored-to-Emotion 🎧😄😢😠
 A Python + JavaScript music player that plays songs based on detected emotion, with the help of ML.
-This is a music player that uses Python (OpenCV + FER) to detect your facial emotion and plays a suitable song based on that emotion. It also supports random mode and manual song queueing.
+This is a music player that uses Python (FER + OpenCV + MTCNN) to detect your facial emotion and plays a suitable song based on that emotion. It also supports random mode and manual song queueing.
 
 🛠 Tech Stack
-Python: OpenCV, FER, Eel, NumPy, TensorFlow
+Python: FER, OpenCV, MTCNN, Eel, NumPy, TensorFlow
 
 Frontend: HTML, CSS, JavaScript
 
